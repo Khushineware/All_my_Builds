@@ -1,0 +1,85 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background: #000; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Calculator container with gradient border */
+.calc-container {
+    background: rgba(20, 20, 20, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    /* Gradient border using background-clip trick */
+    border: 4px solid transparent;
+    background-image: 
+        linear-gradient(rgba(20, 20, 20, 0.95), rgba(20, 20, 20, 0.95)),
+        linear-gradient(135deg, #4f46e5, #7c3aed);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the container */
+.calc-container:hover {
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.8), 0 0 40px rgba(79, 70, 229, 0.6);
+    transform: scale(1.02);
+}
+
+/* Screen display */
+#screen {
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    font-size: 2rem;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: right;
+    overflow-x: auto;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Button grid */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    gap: 10px;
+}
+
+/* Buttons */
+.btn {
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.6);
+}
+
+/* Special buttons */
+.clear {
+    background: linear-gradient(135deg, #f43f5e, #ec4899);
+}
+
+.operator {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+}
+
+.equals {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+}
